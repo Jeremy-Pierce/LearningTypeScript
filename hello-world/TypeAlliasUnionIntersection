@@ -1,0 +1,41 @@
+// Type Allias
+type Employee = {
+    readonly id: number,
+    name: string,
+    retire: (date: Date) => void
+}
+
+let employee: Employee = { 
+    id: 1, 
+    name: "Jeremy", 
+    retire: (date: Date) => {
+    console.log(date);
+    }
+}
+
+// Union Type
+function kgToLbs(kg: number | string) {
+    if (typeof kg === "number") {
+        return kg * 2.2;
+    } else {
+        return kg;
+    }
+}
+kgToLbs(10);
+kgToLbs("10");
+
+// Intersection Type
+type Draggable = {
+    drag: () => void
+};
+
+type Resizable = {
+    resize: () => void
+};
+
+type UIWidget = Draggable & Resizable;
+
+let textBox: UIWidget = {
+    drag: () => {},
+    resize: () => {}
+}
