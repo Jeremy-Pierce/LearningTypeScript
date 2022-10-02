@@ -23,7 +23,7 @@ let user: [string, number] = ["Jeremy", 30];
 // const small =1;
 // const medium =2;
 // const large =3;
-
-enum Size {small =1, medium, large};
+// By using const the compiler will run more optimized code
+const enum Size {small =1, medium, large};
 let mySize: Size = Size.small;
 console.log(mySize);
